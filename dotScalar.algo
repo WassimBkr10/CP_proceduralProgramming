@@ -1,0 +1,55 @@
+// The function's part
+FUNCTION dotProduct(vector1, vector2: ARRAY_OF INTEGER) : INTEGER
+VAR
+    i,result : INTEGER:=0;
+BEGIN
+    // use the for loop to multiplay the vectors elm by others and put the result in an indicator
+    FOR i FROM 0 TO i < vector1.length-1  DO
+        result = result + vector1[i] * vector2 [i]
+    END_FOR
+    // return the result parameter
+    RETURN result;
+END
+
+// The Procedure's part
+PROCEDURE dot_product(VAR v1, VAR v2: ARRAY_OF INTEGER)
+VAR
+    i, result : INTEGER:=0;
+BEGIN
+    // use the for loop to multiplay the vectors elm by others and put the result in an indicator
+    FOR i FROM 0 TO i < vector1.length-1 DO
+        result = result + vector1[i] * vector2 [i]
+    END_FOR
+END
+
+
+ALGORITHM orthogonalVectors
+VAR
+    vec1, vec2 : ARRAY_OF INTEGER[3];
+    i, j, k : INTEGER:=0; 
+BEGIN
+
+
+    FOR i FROM 0 TO 4 DO
+       Read(vec1[i]); // insert array1 from user
+    END_FOR
+
+    FOR i FROM 0 TO 4 DO
+       Read(vec2[i]); // insert array2 from user
+    END_FOR 
+
+    // use the for loop over the first array's to get elements
+    FOR j FROM 0 TO j < vec1.length-1 DO
+        // use the for loop over the second array's to get elements
+        FOR k FROM 0 TO k < vec2.length-1 DO
+            // use if with condition that invoke the dotProduct function 
+            // if the return is zero the vectors are orthogonal
+            IF (dotProduct(vec1[j], vec2[k]) === 0) THEN
+                // write the result
+                write (vec1[j], vec2[k] + "Are orthogonal !")
+            END_IF
+        END_FOR
+    END_FOR
+
+END
+
